@@ -55,6 +55,11 @@ https://github.com/guino/BazzDoorbell/issues/2
 ## telnet
 for telnet access either set the password hash in passwd file (get a hash ( https://unix4lyfe.org/crypt/ ) usin the calculate 'DES' button and copy the value)
 
+
+## offline
+
+https://github.com/guino/BazzDoorbell/wiki/Can-I-use-the-device-OFFLINE-(disconnected-from-tuya-servers)-%3F
+
 ## Cas particulier
 ppstrong-a3-tuya2_lsc-5.2.4.20211015	M16S_A2_V10_MIS	ea82f8dee86047a82404b9bdc715ae75	Mini 16S
 This firmware does NOT need patching to use ONVIF/RTSP 
