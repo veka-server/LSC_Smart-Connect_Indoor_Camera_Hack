@@ -34,10 +34,10 @@ https://github.com/guino/BazzDoorbell/issues/2
   - busybox
   - custom.sh
   - dropbearmulti
-  - httpd.conf
+  - httpd.conf <-- password http
   - index.html
   - jpeg-arm
-  - passwd
+  - passwd <-- password telnet
   - set
   - upload.html
 - Copier le fichier ppsapp présent dans /home/app
@@ -51,3 +51,22 @@ https://github.com/guino/BazzDoorbell/issues/2
 - La caméra devrait booter deux fois !
 - Bravo la caméra est patchée
 - Essayer d'ouvrir le flux RTSP dans ONVIF Device Manager
+
+
+## Cas particulier
+ppstrong-a3-tuya2_lsc-5.2.4.20211015	M16S_A2_V10_MIS	ea82f8dee86047a82404b9bdc715ae75	Mini 16S
+This firmware does NOT need patching to use ONVIF/RTSP 
+
+To recreate, I followed all the steps until patching ppsapp then did the following:
+
+telnet into camera
+modify /home/cfg/tuya_config.json
+(a) change onvif_enable=0 to onvif_enable=1
+(b) change onvif_pwd to the password you wish (plaintext)
+run the following command:
+set onvif_enable 1
+reboot by running the reboot command
+That's it, once it rebooted you can access the rtsp stream.
+
+FLUX HD => rtsp://admin:admin@IP:8554/Streaming/Channels/101
+FLUX SD => rtsp://admin:admin@IP:8554/Streaming/Channels/102
